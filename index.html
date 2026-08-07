@@ -18,31 +18,41 @@
     </ul>
   </nav>
 
-  <!-- Section principale -->
-  <h1>Bomtar Rtírck</h1>
-  <p>Assistant IA connecté à tes modules</p>
+  <!-- En-tête -->
+  <header>
+    <h1>Bomtar Rtírck</h1>
+    <p>Assistant IA connecté à tes modules</p>
+  </header>
 
+  <!-- Section des cartes -->
   <div class="dashboard">
-    <!-- Carte avec graphique circulaire -->
     <div class="card">
       <h2>Progression</h2>
       <canvas id="chart1"></canvas>
       <p>35%</p>
     </div>
 
-    <!-- Carte avec graphique en ligne -->
     <div class="card">
       <h2>Statistiques Mensuelles</h2>
       <canvas id="chart2"></canvas>
     </div>
 
-    <!-- Carte avec indicateurs -->
     <div class="card">
       <h2>Performance</h2>
       <p>Latences service : 84%</p>
       <p>Loisir actives : 0%</p>
       <p>Temps de réponse : 13.22 ms</p>
     </div>
+  </div>
+
+  <!-- Boutons colorés de fonctionnalités -->
+  <div class="fonctions">
+    <button class="vert">Analyse Prédictive</button>
+    <button class="bleu">Optimisation Automatique</button>
+    <button class="orange">Surveillance Énergétique</button>
+    <button class="rouge">Protection Avancée</button>
+    <button class="violet">Contrôle Vocal</button>
+    <button class="cyan">Synchronisation Cloud</button>
   </div>
 
   <!-- Portes vers les chambres -->
@@ -86,7 +96,7 @@
         labels: ["Janvier", "Février", "Mars", "Avril"],
         datasets: [{
           label: "Croissance",
-          data: [10, 20, 30, 25],
+          data: [16, 20, 30, 25],
           borderColor: "#0ff",
           fill: false
         }]
