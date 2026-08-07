@@ -2,13 +2,50 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard avec Portes</title>
+  <title>Dashboard Futuriste</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Dashboard IA Futuriste</h1>
+  <!-- Barre de navigation -->
+  <nav>
+    <ul>
+      <li>Accueil</li>
+      <li>Rapports</li>
+      <li>Statistiques</li>
+      <li>Paramètres</li>
+      <li>Notifications</li>
+    </ul>
+  </nav>
 
-  <!-- Portes principales -->
+  <!-- Section principale -->
+  <h1>Bomtar Rtírck</h1>
+  <p>Assistant IA connecté à tes modules</p>
+
+  <div class="dashboard">
+    <!-- Carte avec graphique circulaire -->
+    <div class="card">
+      <h2>Progression</h2>
+      <canvas id="chart1"></canvas>
+      <p>35%</p>
+    </div>
+
+    <!-- Carte avec graphique en ligne -->
+    <div class="card">
+      <h2>Statistiques Mensuelles</h2>
+      <canvas id="chart2"></canvas>
+    </div>
+
+    <!-- Carte avec indicateurs -->
+    <div class="card">
+      <h2>Performance</h2>
+      <p>Latences service : 84%</p>
+      <p>Loisir actives : 0%</p>
+      <p>Temps de réponse : 13.22 ms</p>
+    </div>
+  </div>
+
+  <!-- Portes vers les chambres -->
   <div class="portes">
     <div class="porte" onclick="ouvrirChambre('scanner')">🚪 Scanner</div>
     <div class="porte" onclick="ouvrirChambre('boussole')">🚪 Boussole</div>
@@ -20,7 +57,7 @@
     <div class="porte" onclick="ouvrirChambre('oracle')">🚪 Oracle</div>
   </div>
 
-  <!-- Chambres (modules) -->
+  <!-- Chambres -->
   <div id="scanner" class="chambre">📡 Chambre Scanner</div>
   <div id="boussole" class="chambre">🧭 Chambre Boussole</div>
   <div id="bibliotheque" class="chambre">📚 Chambre Bibliothèque</div>
@@ -31,12 +68,35 @@
   <div id="oracle" class="chambre">🔮 Chambre Oracle</div>
 
   <script>
+    // Graphiques Chart.js
+    new Chart(document.getElementById("chart1"), {
+      type: "doughnut",
+      data: {
+        labels: ["Progression", "Reste"],
+        datasets: [{
+          data: [35, 65],
+          backgroundColor: ["#0ff", "#222"]
+        }]
+      }
+    });
+
+    new Chart(document.getElementById("chart2"), {
+      type: "line",
+      data: {
+        labels: ["Janvier", "Février", "Mars", "Avril"],
+        datasets: [{
+          label: "Croissance",
+          data: [10, 20, 30, 25],
+          borderColor: "#0ff",
+          fill: false
+        }]
+      }
+    });
+
+    // Portes → Chambres
     function ouvrirChambre(nom) {
-      // Fermer toutes les chambres
       document.querySelectorAll('.chambre').forEach(c => c.style.display = 'none');
-      // Ouvrir la chambre choisie
       document.getElementById(nom).style.display = 'block';
-      alert("La porte " + nom + " est ouverte !");
     }
   </script>
 </body>
