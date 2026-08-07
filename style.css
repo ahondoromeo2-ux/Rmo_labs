@@ -17,8 +17,12 @@ nav li {
   cursor: pointer;
 }
 
-h1 {
+header {
   text-align: center;
+  margin: 20px;
+}
+
+header h1 {
   color: #0ff;
   text-shadow: 0 0 10px #0ff;
 }
@@ -39,6 +43,29 @@ h1 {
   box-shadow: 0 0 15px #0ff;
   text-align: center;
 }
+
+.fonctions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.fonctions button {
+  margin: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.vert { background: green; }
+.bleu { background: blue; }
+.orange { background: orange; }
+.rouge { background: red; }
+.violet { background: purple; }
+.cyan { background: cyan; color: #111; }
 
 .portes {
   display: flex;
