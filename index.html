@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard High-Tech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bienvenue dans ton Dashboard</h1>
+
+  <!-- Assistants IA -->
+  <div class="assistants">
+    <button onclick="activerAssistant('Gemini')">Gemini</button>
+    <button onclick="activerAssistant('Copilot')">Copilot</button>
+  </div>
+
+  <!-- Modules -->
+  <div class="modules">
+    <button id="scanner" onclick="ouvrirModule('scanner')">Scanner</button>
+    <button id="boussole" onclick="ouvrirModule('boussole')">Boussole</button>
+    <button id="bibliotheque" onclick="ouvrirModule('bibliotheque')">Bibliothèque</button>
+    <button id="generateur" onclick="ouvrirModule('generateur')">Générateur</button>
+    <button id="grimoire" onclick="ouvrirModule('grimoire')">Grimoire</button>
+    <button id="oracle" onclick="ouvrirModule('oracle')">Oracle</button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function activerAssistant(nom) {
+      alert(nom + " activé !");
+      // Ici tu connecteras l’API Gemini ou Copilot
+    }
+
+    function ouvrirModule(module) {
+      const elem = document.getElementById(module);
+      elem.classList.add("active");
+      alert("Module " + module + " ouvert !");
+    }
+  </script>
+</body>
+</html>
