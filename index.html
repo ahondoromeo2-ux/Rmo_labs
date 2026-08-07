@@ -59,30 +59,23 @@
     <button class="cyan">Synchronisation Cloud</button>
   </div>
 
-  <!-- Portes vers chambres -->
-  <div class="portes">
-    <div class="porte" onclick="ouvrirChambre('scanner')">🚪 Scanner</div>
-    <div class="porte" onclick="ouvrirChambre('boussole')">🚪 Boussole</div>
-    <div class="porte" onclick="ouvrirChambre('bibliotheque')">🚪 Bibliothèque</div>
-    <div class="porte" onclick="ouvrirChambre('generateur')">🚪 Générateur</div>
-    <div class="porte" onclick="ouvrirChambre('laboratoire')">🚪 Laboratoire</div>
-    <div class="porte" onclick="ouvrirChambre('galerie')">🚪 Galerie</div>
-    <div class="porte" onclick="ouvrirChambre('climat')">🚪 Climat</div>
-    <div class="porte" onclick="ouvrirChambre('oracle')">🚪 Oracle</div>
+  <!-- Section Fonctennalites -->
+  <div class="indicateurs">
+    <p class="vert">● Analyse</p>
+    <p class="bleu">● Optitance aúcionstique</p>
+    <p class="orange">● Asumate Io</p>
+    <p class="rouge">● Matticóle</p>
+    <p class="violet">● Gotites</p>
   </div>
 
-  <!-- Chambres -->
-  <div id="scanner" class="chambre">📡 Chambre Scanner</div>
-  <div id="boussole" class="chambre">🧭 Chambre Boussole</div>
-  <div id="bibliotheque" class="chambre">📚 Chambre Bibliothèque</div>
-  <div id="generateur" class="chambre">⚡ Chambre Générateur</div>
-  <div id="laboratoire" class="chambre">🔬 Chambre Laboratoire</div>
-  <div id="galerie" class="chambre">🎶 Chambre Galerie</div>
-  <div id="climat" class="chambre">🌦️ Chambre Climat</div>
-  <div id="oracle" class="chambre">🔮 Chambre Oracle</div>
+  <!-- Statistiques Planétaires -->
+  <div class="card large">
+    <h2>Statistiques Planétaires</h2>
+    <canvas id="chart3"></canvas>
+  </div>
 
   <script>
-    // Graphiques Chart.js
+    // Graphique circulaire
     new Chart(document.getElementById("chart1"), {
       type: "doughnut",
       data: {
@@ -94,6 +87,7 @@
       }
     });
 
+    // Graphique en ligne
     new Chart(document.getElementById("chart2"), {
       type: "line",
       data: {
@@ -107,11 +101,18 @@
       }
     });
 
-    // Portes → Chambres
-    function ouvrirChambre(nom) {
-      document.querySelectorAll('.chambre').forEach(c => c.style.display = 'none');
-      document.getElementById(nom).style.display = 'block';
-    }
+    // Graphique en barres (planétaire)
+    new Chart(document.getElementById("chart3"), {
+      type: "bar",
+      data: {
+        labels: ["Amérique", "Europe", "Asie", "Afrique", "Océanie"],
+        datasets: [{
+          label: "Population (milliers)",
+          data: [100, 80, 120, 60, 40],
+          backgroundColor: ["#0ff","#00f","#f80","#f00","#800"]
+        }]
+      }
+    });
   </script>
 </body>
 </html>
