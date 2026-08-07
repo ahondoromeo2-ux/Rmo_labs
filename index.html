@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Dashboard Futuriste</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <!-- Barre de navigation avec avatars -->
@@ -27,22 +28,61 @@
     <p>Assistant IA connecté à tes modules</p>
   </header>
 
-  <!-- Exemple de cartes -->
+  <!-- Cartes principales -->
   <div class="dashboard">
     <div class="card">
       <h2>Progression</h2>
       <canvas id="chart1"></canvas>
       <p>35%</p>
     </div>
+
     <div class="card">
       <h2>Statistiques Mensuelles</h2>
       <canvas id="chart2"></canvas>
     </div>
+
+    <div class="card">
+      <h2>Performance</h2>
+      <p>Latences service : 84%</p>
+      <p>Loisir actives : 0%</p>
+      <p>Temps de réponse : 13.22 ms</p>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Boutons colorés -->
+  <div class="fonctions">
+    <button class="vert">Analyse Prédictive</button>
+    <button class="bleu">Optimisation Automatique</button>
+    <button class="orange">Surveillance Énergétique</button>
+    <button class="rouge">Protection Avancée</button>
+    <button class="violet">Contrôle Vocal</button>
+    <button class="cyan">Synchronisation Cloud</button>
+  </div>
+
+  <!-- Portes vers chambres -->
+  <div class="portes">
+    <div class="porte" onclick="ouvrirChambre('scanner')">🚪 Scanner</div>
+    <div class="porte" onclick="ouvrirChambre('boussole')">🚪 Boussole</div>
+    <div class="porte" onclick="ouvrirChambre('bibliotheque')">🚪 Bibliothèque</div>
+    <div class="porte" onclick="ouvrirChambre('generateur')">🚪 Générateur</div>
+    <div class="porte" onclick="ouvrirChambre('laboratoire')">🚪 Laboratoire</div>
+    <div class="porte" onclick="ouvrirChambre('galerie')">🚪 Galerie</div>
+    <div class="porte" onclick="ouvrirChambre('climat')">🚪 Climat</div>
+    <div class="porte" onclick="ouvrirChambre('oracle')">🚪 Oracle</div>
+  </div>
+
+  <!-- Chambres -->
+  <div id="scanner" class="chambre">📡 Chambre Scanner</div>
+  <div id="boussole" class="chambre">🧭 Chambre Boussole</div>
+  <div id="bibliotheque" class="chambre">📚 Chambre Bibliothèque</div>
+  <div id="generateur" class="chambre">⚡ Chambre Générateur</div>
+  <div id="laboratoire" class="chambre">🔬 Chambre Laboratoire</div>
+  <div id="galerie" class="chambre">🎶 Chambre Galerie</div>
+  <div id="climat" class="chambre">🌦️ Chambre Climat</div>
+  <div id="oracle" class="chambre">🔮 Chambre Oracle</div>
+
   <script>
-    // Graphique circulaire
+    // Graphiques Chart.js
     new Chart(document.getElementById("chart1"), {
       type: "doughnut",
       data: {
@@ -54,7 +94,6 @@
       }
     });
 
-    // Graphique en ligne
     new Chart(document.getElementById("chart2"), {
       type: "line",
       data: {
@@ -67,6 +106,12 @@
         }]
       }
     });
+
+    // Portes → Chambres
+    function ouvrirChambre(nom) {
+      document.querySelectorAll('.chambre').forEach(c => c.style.display = 'none');
+      document.getElementById(nom).style.display = 'block';
+    }
   </script>
 </body>
 </html>
