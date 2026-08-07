@@ -75,6 +75,10 @@ header h1 {
   text-align: center;
 }
 
+.card.large {
+  width: 600px;
+}
+
 .fonctions {
   display: flex;
   flex-wrap: wrap;
@@ -98,37 +102,8 @@ header h1 {
 .violet { background: purple; }
 .cyan { background: cyan; color: #111; }
 
-.portes {
+.indicateurs {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   margin: 20px;
-}
-
-.porte {
-  background: #111;
-  border: 2px solid #0ff;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 15px;
-  width: 120px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.porte:hover {
-  background: #0ff;
-  color: #111;
-  box-shadow: 0 0 15px #0ff;
-}
-
-.chambre {
-  display: none;
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;
-  background: #111;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #0ff;
-  text-align: center;
 }
