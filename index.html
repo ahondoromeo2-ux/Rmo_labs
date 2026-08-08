@@ -28,19 +28,8 @@
     <p>Assistant IA connecté à tes modules</p>
   </header>
 
-  <!-- Cartes principales -->
+  <!-- Carte Performance uniquement -->
   <div class="dashboard">
-    <div class="card">
-      <h2>Progression</h2>
-      <canvas id="chart1"></canvas>
-      <p>35%</p>
-    </div>
-
-    <div class="card">
-      <h2>Statistiques Mensuelles</h2>
-      <canvas id="chart2"></canvas>
-    </div>
-
     <div class="card">
       <h2>Performance</h2>
       <p>Latences service : 84%</p>
@@ -61,6 +50,15 @@
     <button class="bleu">Oracle</button>
   </div>
 
+  <!-- Section Fonctennalites -->
+  <div class="indicateurs">
+    <p class="vert">● Analyse</p>
+    <p class="bleu">● Optitance aúcionstique</p>
+    <p class="orange">● Asumate Io</p>
+    <p class="rouge">● Matticóle</p>
+    <p class="violet">● Gotites</p>
+  </div>
+
   <!-- Statistiques Planétaires -->
   <div class="card large">
     <h2>Statistiques Planétaires</h2>
@@ -68,32 +66,6 @@
   </div>
 
   <script>
-    // Graphique circulaire
-    new Chart(document.getElementById("chart1"), {
-      type: "doughnut",
-      data: {
-        labels: ["Progression", "Reste"],
-        datasets: [{
-          data: [35, 65],
-          backgroundColor: ["#0ff", "#222"]
-        }]
-      }
-    });
-
-    // Graphique en ligne
-    new Chart(document.getElementById("chart2"), {
-      type: "line",
-      data: {
-        labels: ["Janvier", "Février", "Mars", "Avril"],
-        datasets: [{
-          label: "Croissance",
-          data: [16, 20, 30, 25],
-          borderColor: "#0ff",
-          fill: false
-        }]
-      }
-    });
-
     // Graphique en barres (planétaire)
     new Chart(document.getElementById("chart3"), {
       type: "bar",
