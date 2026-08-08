@@ -95,3 +95,9 @@ header h1 {
 .rouge { background: red; }
 .violet { background: purple; }
 .cyan { background: cyan; color: #111; }
+
+.indicateurs {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
